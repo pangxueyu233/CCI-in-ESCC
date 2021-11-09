@@ -6,7 +6,7 @@ This page recorded the codes used and mentioned in [this paper]().
 
 To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all processed data on [Figshare](https://figshare.com/account/projects/92384/articles/13206338) and you could download them followed according agreements. Raw data also had been submitted on GEO database, and you could be accessible by clicking [GSEXXX]( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161570). Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
 
-In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we also be happy to share them to help you improve your work efficiency in omics data analysis and visualizations.\
+In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we also be happy to share them to help you improve your work efficiency in omics data analysis and visualizations.
 
 # **The usage of CCI-Identify** (update recently)
 
@@ -15,8 +15,6 @@ In this project, to better analyze and visualize our data, we have modified a lo
 
 
 # **Codes of analyzing and visualization**
-
-------
 
 The codes of this project included four parts, `scRNA-seq` data analysis, `TCGA-ESCC`data analysis, `micro-array` data analysis and `protein` data analysis. The general processing of these data had been recorded in following pages, and stored as markdown files. 
 
@@ -36,7 +34,7 @@ This part recorded the basic codes which could generate Figure3 and protein data
 
 This part recorded the basic codes which could generate Figure3 and Confused signatures related materials. And you could access this code by click [here](bulk_RNA.md).
 
---------------------
+
 
 The most important part of this study was to identify the confused cell identity (CCI), a general and special feature of ESCC. Therefore, we used a single part to display how we generated these plots mentioned in our paper. And we also showed how to generate the confused score to quantify the CCI in ESCC, among scRNA-seq, bulk RNA-seq and even micro-array data. 
 
