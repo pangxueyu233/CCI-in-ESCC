@@ -1,8 +1,8 @@
-#  Codes of Confused signatures
+#  Codes of CCI signatures
 
-This part included the generation of Confused signatures mentioned in paper. And here, we showed the ESCC cells could expressed all normal signatures, but exclusively expressed the Confused signatures on single cell levels. 
+This part included the generation of CCI signatures mentioned in paper. And here, we showed the ESCC cells could expressed all normal signatures, but exclusively expressed the CCI signatures on single cell levels. 
 
-## 1. Confused signatures identified
+## 1. CCI signatures identified
 
 * To save the meomry and time on scRNA data processing, we downsampled the scRNA data firstly. 
 
@@ -79,7 +79,7 @@ dev.off()
 
 ![image-20211109140009775](CCI_signatures_Identified.assets/image-20211109140009775.png)
 
-* Then, we began to identify the confused signaturs in ESCC SE cells. 
+* Then, we began to identify the CCI signaturs in ESCC SE cells. 
 
 ~~~R
 Idents(merge_Malignant_And_Normal_SE1) <- merge_Malignant_And_Normal_SE1$predicted.id
@@ -138,9 +138,9 @@ dev.off()
 
 ![image-20211109140623135](CCI_signatures_Identified.assets/image-20211109140623135.png)
 
-## 2. Confused signatures projection on the ternary map
+## 2. CCI signatures projection on the ternary map
 
-* Then, we projected the confused sigantures on the ternary map.
+* Then, we projected the CCI sigantures on the ternary map.
 
 ~~~R
 Malignant_VS_Normal1_specific <- mcreadRDS("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_cancer6/normal/confused_identity_sig_with_FC.rds",mc.cores=20)
@@ -196,7 +196,7 @@ ggsave("./figure_making/confused_states_sig_scESCC_projection.svg", plot=p1,widt
 
 ![image-20211109140805160](CCI_signatures_Identified.assets/image-20211109140805160.png)
 
-## 3. The overlayed genes between Confused signatures and up-regulated protein
+## 3. The overlayed genes between CCI signatures and up-regulated protein
 
 ~~~R
 Malignant_VS_Normal1_specific <- mcreadRDS("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_cancer6/normal/confused_identity_sig_with_FC.rds",mc.cores=20)

@@ -139,13 +139,13 @@ This part recorded the basic codes which could generate `Figure1` and related ma
 
 This part recorded the basic codes which could generate `Figure3` and protein data related materials. And you could access this code by clicking [here](protein_process.md).
 
-* ## 4. Codes of Confused signatures identified
+* ## 4. Codes of  CCI signatures identified
 
-This part recorded the basic codes which could generate `Figure` and Confused signatures related materials. And you could access this code by clicking [here](CCI_signatures_Identified.md).
+This part recorded the basic codes which could generate `Figure` and CCI signatures related materials. And you could access this code by clicking [here](CCI_signatures_Identified.md).
 
-# **Codes of confused cell identity and confused scores**
+# **Codes of confused cell identity and CCI scores**
 
-The most important part of this study was to identify the confused cell identity (CCI), a general and special feature of ESCC. Therefore, we used a single part to display how we generated these plots mentioned in our paper. And we also showed how to generate the confused score to quantify the CCI in ESCC, among scRNA-seq, bulk RNA-seq and even micro-array data. 
+The most important part of this study was to identify the confused cell identity (CCI), a general and special feature of ESCC. Therefore, we used a single part to display how we generated these plots mentioned in our paper. And we also showed how to generate the CCI score to quantify the CCI in ESCC, among scRNA-seq, bulk RNA-seq and even micro-array data. 
 
 * ## 1. Codes of confused cell identity (CCI) in Omics data
 
@@ -153,7 +153,7 @@ This part recorded the codes of CCI visualization in Omics data, including scRNA
 
 * ## 2. Codes of CCI scores generation in Omics data
 
-This part recorded the codes of confused score generation in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by clicking [here](Confused_score_in_Omics.md).
+This part recorded the codes of CCI score generation in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by clicking [here](Confused_score_in_Omics.md).
 
 * ## 3. Codes of CCI as an independent dignosis marker
 

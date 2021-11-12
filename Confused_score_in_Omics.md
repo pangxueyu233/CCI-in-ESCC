@@ -1,12 +1,12 @@
-# Codes of confused score generation in Omics data
+# Codes of CCI score generation in Omics data
 
-This part recorded the codes of confused scores calculation, including scRNA-seq data, bulk RNA-seq data and micro-array data. The detail methods could be learned from paper.  The basic concepts of confused score were described as following: 
+This part recorded the codes of CCI scores calculation, including scRNA-seq data, bulk RNA-seq data and micro-array data. The detail methods could be learned from paper.  The basic concepts of CCI score were described as following: 
 
-![image-20211109125152281](Confused_score_in_Omics.assets/image-20211109125152281.png)
+![image-20211112110320329](Confused_score_in_Omics.assets/image-20211112110320329.png)
 
-# Codes of Confused score in scRNA-seq data
+# Codes of CCI in scRNA-seq data
 
-## Confused score in our scRNA-seq data
+## CCI score in our scRNA-seq data
 
 ~~~R
 scESCC_HCA_merge <- mcreadRDS("/mnt/data/GEO_SUBMIT/CCI_ESCC/scESCC_HCA_merge.rds",mc.cores=20)
@@ -67,7 +67,7 @@ ggsave("./Confusion_score_Ours.svg", plot=p1,width = 5, height = 5,dpi=1080)
 
 ![image-20211109125747719](Confused_score_in_Omics.assets/image-20211109125747719.png)
 
-## Confused score in single cell ESCC data
+## CCI score in single cell ESCC data
 
 ~~~R
 scESCC_seurat_only <- mcreadRDS("/mnt/data/GEO_SUBMIT/CCI_ESCC/scESCC_map_from_Zhang_only_SE.rds", mc.cores = 20)
@@ -99,7 +99,7 @@ p1 <- ggboxplot(speci_raw, x = "new_stage", y = "Confusion_score", fill="new_sta
 
 ![image-20211109125923932](Confused_score_in_Omics.assets/image-20211109125923932.png)
 
-# Confused score related pathways
+# CCI score related pathways
 
 ~~~R
 Malignant_SE_filter <- mcreadRDS("/mnt/data/GEO_SUBMIT/CCI_ESCC/scESCC_map_only_MSE.rds",mc.cores=20)
@@ -183,7 +183,7 @@ ggsave("./figure_making/GSEA_confused_sig_cor_res.svg", plot=p1,width = 12, heig
 
 ![image-20211109131729773](Confused_score_in_Omics.assets/image-20211109131729773.png)
 
-# Codes of Confused score in micro-array data
+# Codes of CCI score in micro-array data
 
 ~~~R
 GSE20347_array <- mcreadRDS("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_all_sample_merge/OTS_data/GSE20347/GSE20347_integrated.rds",mc.cores=20)
@@ -271,7 +271,7 @@ ggsave("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_all_sample_mer
 
 ![image-20211109132702112](Confused_score_in_Omics.assets/image-20211109132702112.png)
 
-# Codes of Confused score in bulk RNA-seq data (TCGA-ESCC)
+# Codes of CCI score in bulk RNA-seq data (TCGA-ESCC)
 
 ~~~R
 ESCC_FPKM <- fread("/mnt/data/user_data/xiangyu/workshop/DATABASE/TCGA_ESCA/ESCA_RNA_transfer_symbol.csv")

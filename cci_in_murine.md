@@ -47,7 +47,7 @@ p1 <- ggtern(bulk_RNAseq , aes(x = BK, y = BS, z = DK))+
 
 ![image-20211109134841548](cci_in_murine.assets/image-20211109134841548.png)
 
-## 2. Confused scores in TPM4 overexpression data
+## 2. CCI scores in TPM4 overexpression data
 
 ~~~R
 DESeq2_count <- read.csv("/mnt/data/user_data/xiangyu/workshop/RNAseq/TPM4/V2_data/sortedByCoord.out.bam/Tpm4_vs_pmigwork_file/PXY_2_DESeq2_count.csv")
@@ -188,7 +188,7 @@ ggsave("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_all_sample_mer
 
 ![image-20211109134955679](cci_in_murine.assets/image-20211109134955679.png)
 
-## 4. Confused scores in JAK inhibitor treatment
+## 4. CCI scores in JAK inhibitor treatment
 
 ~~~R
 AZ960_VS_Ctrl <- read.csv("/mnt/data/user_data/xiangyu/workshop/RNAseq/RNAseq_89_WJ_20210825_6samples/sortedByCoord.out.bam/AZ960_vs_Ctrl_3_vs_3_work_file/5_AZ960_VS_Ctrl_count_DESeq2_count_symbol_and_anno.csv")
