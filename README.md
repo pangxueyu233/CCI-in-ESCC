@@ -10,7 +10,9 @@ In this project, to better analyze and visualize our data, we have modified a lo
 
 # **The usage of CCI-Identify** 
 
-To better validate the Confused Cell Identity (CCI) in ESCC and calculate the CCI score in each sample/single-cell, we had created a pipeline, named `CCI-Identify.R` to directly generate the CCI related results mentioned in our paper. And this part would help you yo understand the detail input files in  `CCI-Identify.R` pipeline. Firstly, you should install the appropriate `R (version >= 3.5)`, `ggplot2 (version=3.1)` and `ggtern (version=3.1)`.
+To better validate the Confused Cell Identity (CCI) in ESCC and calculate the CCI score in each sample/single-cell, we had created a pipeline, named `CCI-Identify.R` , to directly generate the CCI related results mentioned in our paper. And you could get the pipeline by clicking [here](CCI-Identify).
+
+This part would help you yo understand the detail input files in  `CCI-Identify.R` pipeline. Firstly, you should install the appropriate `R (version >= 3.5)`, `ggplot2 (version=3.1)`, `ggtern (version=3.1)`, `dplyr`, `nichenetr` and `data.table`.
 
 These pipeline included some important parameters. And here, we could introduce each of them. 
 
@@ -48,11 +50,11 @@ Rscript ./CCI-Identify.R
 
 ~~~
 
-* 1. The `BS_BK_DK_sig` could be accessed in `./CCI-Identify` files, named `BS_BK_DK_sig.csv`
+* 1. The `BS_BK_DK_sig` could be accessed in `./CCI-Identify` files, named `BS_BK_DK_sig.csv`. And you could get these files by clicking [here](CCI-Identify)
 
 * 2. The test `input` files had also been stored  in `./CCI-Identify` files, named `test_counts.csv`
 
-     Here, you should generate the `input` files as following structure: (top 6 rows were showewd)
+     Here, you should generate the `input` files as following structure: (top 6 rows were showed)
 
 | Gene          | pmig1    | pmig2    | pmig3    | Tpm4_1   | Tpm4_2   | Tpm4_3   |
 | ------------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -67,7 +69,7 @@ Rscript ./CCI-Identify.R
 
 * 3. In `axis_range`, it's a parameter based on the experience. For mouse bulk RNA-seq data, we suggested `0.45` as the appropriate value. For human scRNA-seq data, RNAs-seq and micro-array data, the `1` was recommended. If you get the ternary map didn't displayed your samples, you need set a higher number of this parameter 
 
-* 4. In `log_transform`, default is `TRUE`, if you are not sure your data had processed the log-transformation, you could set the default value. 
+* 4. In `log_transform`, default is `TRUE`. if you are not sure your data should be processed by log-transformation, you could keep the default value. 
 
 Then, you could try the test codes with test data stored in `./CCI-Identify` as following:
 
@@ -83,7 +85,7 @@ Rscript ./CCI-Identify.R \
     --log_transform=YES
 ~~~
 
-~~~R
+~~~shell
 loading packages
 CCI calculation done
 CCI distribution done
@@ -92,8 +94,8 @@ The density of CCI distrubution done
 
 And then, you could get the output files as following:
 
-~~~R
-./out_tmp/
+~~~shell
+tree -lh ./out_tmp/
 ├── [447K]  TPM4oe_vs_Ctrl_mouse_RNAseq_CCI_density.pdf
 ├── [2.1M]  TPM4oe_vs_Ctrl_mouse_RNAseq_CCI_density.svg
 ├── [5.4K]  TPM4oe_vs_Ctrl_mouse_RNAseq_CCI.pdf
@@ -113,11 +115,11 @@ And then, you could get the output files as following:
 | Tpm4_2 | 8.426748 | 9.174584 | 8.321803 | 0.612408 | 0.562489 | 0.555484 | 32.21563  |
 | Tpm4_3 | 8.353699 | 9.325516 | 8.28812  | 0.621091 | 0.556366 | 0.551999 | 25.84578  |
 
-* The `*_CCI.pdf/svg` files recorded the distribution of each sample on the ternary map
+* The `*_CCI.pdf/.svg` files recorded the distribution of each sample on the ternary map
 
   ![image-20211111214102495](README.assets/image-20211111214102495.png)
 
-* The `*_CCI_density.pdf/svg` files recorded the density of CCI distribution on the ternary map 
+* The `*_CCI_density.pdf/.svg` files recorded the density of CCI distribution on the ternary map 
 
 ![image-20211111214037161](README.assets/image-20211111214037161.png)
 
@@ -127,19 +129,19 @@ The codes of this project included four parts, `scRNA-seq` data analysis, `TCGA-
 
 * ## 1. Codes of ESCC single-cell landscape
 
-This part recorded the basic codes which could generate Figure1. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the basic codes which could generate `Figure1`. And you could access this code by clicking [here](scESCC_Ours.md).
 
 * ##  2. Codes of single-cell normal SE development
 
-This part recorded the basic codes which could generate Figure1 and related materials. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the basic codes which could generate `Figure1` and related materials. And you could access this code by clicking [here](scSE_development.md).
 
 * ## 3. Codes of protein data processing
 
-This part recorded the basic codes which could generate Figure3 and protein data related materials. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the basic codes which could generate `Figure3` and protein data related materials. And you could access this code by clicking [here](protein_process.md).
 
 * ## 4. Codes of Confused signatures identified
 
-This part recorded the basic codes which could generate Figure3 and Confused signatures related materials. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the basic codes which could generate `Figure` and Confused signatures related materials. And you could access this code by clicking [here](CCI_signatures_Identified.md).
 
 # **Codes of confused cell identity and confused scores**
 
@@ -147,19 +149,19 @@ The most important part of this study was to identify the confused cell identity
 
 * ## 1. Codes of confused cell identity (CCI) in Omics data
 
-This part recorded the codes of CCI visualization in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the codes of CCI visualization in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by clicking [here](CCI_in_Omics.md).
 
-* ## 2. Codes of confused score generation in Omics data
+* ## 2. Codes of CCI scores generation in Omics data
 
-This part recorded the codes of confused score generation in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the codes of confused score generation in Omics data, including scRNA-seq data, bulk RNA-seq data and micro-array data. And you could access this code by clicking [here](Confused_score_in_Omics.md).
 
 * ## 3. Codes of CCI as an independent dignosis marker
 
-This part recorded the codes to validate the CCI was an independent dignosis marker. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the codes to validate the CCI was an independent dignosis marker. And you could access this code by clicking [here](CCI_as_dignosis_marker.md).
 
 * ## 4. Codes of CCI in murine data
 
-This part recorded the codes of CCI in murine data. And you could access this code by click [here](bulk_RNA.md).
+This part recorded the codes of CCI in murine data. And you could access this code by clicking [here](cci_in_murine.md).
 
 # **Citation**
 
