@@ -61,18 +61,18 @@ library(PCAtools)
 ~~~R
 scESCC_map <- mcreadRDS(file="/mnt/data/GEO_SUBMIT/CCI_ESCC/scESCC_map.rds",mc.cores=20)
 color <- c("#f000e6","#21A0A0","#E0607E","#00db00",
-  "#2f3eff","#ff0098","#942093","#00b0f0","#45503B",
+  "#2f3eff","#ff0098", "#3A6EA5","#942093","#00b0f0","#45503B",
   "#00eef3","#f7f85e","#36C9C6")
 cell_types <- c("Squamous Epithelium", "Glandular epithelium", "Fibroblast", 
-  "T cells", "Vascular endothelial", "Macrophages", "Plasma cells", "B cells", 
+  "T cells", "Vascular endothelial", "Macrophages", "Neutrophil","Plasma cells", "B cells", 
   "Smooth muscle", "Lymphatic Vascular endothelial", "Mast cells", "Plasmacytoid dendritic cells")
-scESCC_map$new_anno2 <- factor(scESCC_map$new_anno2,levels=cell_types)
-Idents(scESCC_map) <- scESCC_map$new_anno2
-p1 <- DimPlot(object = scESCC_map, reduction = "tsne",label = F,repel=T,cols=color[1:length(unique(scESCC_map$new_anno2))]) +labs(title="Cell type") + ggmin::theme_powerpoint()
-ggsave("./figure_making/single_cell_tsne_color_by_new_anno.png", plot=p1,width = 7.5, height = 5,dpi=1080)
+all_merge$new_anno2 <- factor(all_merge$new_anno2,levels=cell_types)
+Idents(all_merge) <- all_merge$new_anno2
+p1 <- DimPlot(object = all_merge, reduction = "tsne",label = F,repel=T,cols=color[1:length(unique(all_merge$new_anno2))]) +labs(title="Cell type") + ggmin::theme_powerpoint()
+
 ~~~
 
-![image-20211108214450236](scESCC_Ours.assets/image-20211108214450236.png)
+![image-20211109153211528](scESCC_Ours.assets/image-20211109153211528.png)
 
 ~~~R
 Patient <- c("Patient 2","Patient 3","Patient 1","Patient 4","Patient 5","Patient 6")
@@ -89,12 +89,14 @@ ggsave("./figure_making/single_cell_tsne_color_by_Patient.png", plot=p1,width = 
 
 ~~~R
 color <- c("#f000e6","#21A0A0","#E0607E","#00db00",
-  "#2f3eff","#ff0098","#942093","#00b0f0","#45503B",
-  "#00eef3","#f7f85e","#ED6A5A","#36C9C6")
-cell_types <- c("Squamous Epithelium", "Glandular epithelium", "Fibroblast", "T cells", "Vascular endothelial", "Macrophages", "Plasma cells", "B cells", "Smooth muscle", "Lymphatic Vascular endothelial", "Mast cells", "Plasmacytoid dendritic cells")
+  "#2f3eff","#ff0098", "#3A6EA5","#942093","#00b0f0","#45503B",
+  "#00eef3","#f7f85e","#36C9C6")
+cell_types <- c("Squamous Epithelium", "Glandular epithelium", "Fibroblast", 
+  "T cells", "Vascular endothelial", "Macrophages", "Neutrophil","Plasma cells", "B cells", 
+  "Smooth muscle", "Lymphatic Vascular endothelial", "Mast cells", "Plasmacytoid dendritic cells")
 col <- color
 names(col) <- cell_types
-group_perc <- as.data.frame(table(scESCC_map$new_group,scESCC_map$new_anno2))
+group_perc <- as.data.frame(table(all_merge$new_group,all_merge$new_anno2))
 group_perc$Var1 <- as.character(group_perc$Var1)
 aa_all <- c()
 for (i in unique(group_perc$Var1)){
@@ -111,21 +113,19 @@ p1 <- ggplot(data=aa_all, aes(x=Var1, y=normalised_Freq, fill=Var2))+
 ggsave("./figure_making/single_cell_map_percentage_summary.svg", plot=p1,width = 7.5, height = 5,dpi=1080)
 ~~~
 
-![image-20211108214732536](scESCC_Ours.assets/image-20211108214732536.png)
+![image-20211109153237704](scESCC_Ours.assets/image-20211109153237704.png)
 
 ~~~R
-
-CT <- c("Glandular epithelium", "Squamous Epithelium","Fibroblast", "T cells", 
-  "Vascular endothelial", "Macrophages", "Plasma cells", "B cells", "Smooth muscle", 
-  "Lymphatic Vascular endothelial", "Mast cells", "Neutrophil", "Plasmacytoid dendritic cells")
+CT <- c("Squamous Epithelium", "Glandular epithelium", "Fibroblast", 
+  "T cells", "Vascular endothelial", "Macrophages", "Neutrophil","Plasma cells", "B cells", 
+  "Smooth muscle", "Lymphatic Vascular endothelial", "Mast cells", "Plasmacytoid dendritic cells")
 CT <- CT[order(CT)]
-scESCC_map$new_anno2 <- factor(scESCC_map$new_anno2,levels=CT)
-Idents(scESCC_map) <- scESCC_map$new_anno2
-p1 <- DotPlot(scESCC_map, features = c("CD79A","THY1","KRT7","PDPN","CD14","KIT","IGJ","IL3RA","ACTA2","KRT5","CD3E","ICAM1"), cols=c("#ffffff", "#B30000"),scale = TRUE,col.min = 0,col.max = 5) + RotatedAxis()
-ggsave("./figure_making/cluster_marker_color_dotplot.svg", plot=p1,width = 8, height = 5,dpi=1080)
+all_merge$new_anno2 <- factor(all_merge$new_anno2,levels=CT)
+Idents(all_merge) <- all_merge$new_anno2
+p1 <- DotPlot(all_merge, features = c("CD79A","THY1","KRT7","PDPN","CD14","KIT","S100A8","IGJ","IL3RA","ACTA2","KRT5","CD3E","ICAM1"), cols=c("#ffffff", "#B30000"),scale = TRUE,col.min = 0,col.max = 5) + RotatedAxis()
 ~~~
 
-![image-20211108214804417](scESCC_Ours.assets/image-20211108214804417.png)
+![image-20211109153330727](scESCC_Ours.assets/image-20211109153330727.png)
 
 ~~~R
 p1 <- XY_FeaturePlot(object = scESCC_map, features = c("KRT5","CD3E","CD79A","CLDN5","COL1A1","LYZ"),ncol=3,pt.size=.1,reduction="tsne",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))
