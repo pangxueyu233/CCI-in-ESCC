@@ -1,6 +1,6 @@
 # **The confused cell identity is associated with aggressiveness in esophageal squamous cell carcinoma**
 
-![image-20211108205125159](README.assets/image-20211108205125159.png)
+![image-20211112114240906](README.assets/image-20211112114240906.png)
 
 This page recorded the codes used and mentioned in [this paper](). 
 
