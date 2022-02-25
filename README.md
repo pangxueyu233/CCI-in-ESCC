@@ -38,16 +38,15 @@ Rscript ./CCI-Identify.R
             Only RNAseq, microarray and scRNA was supported for this function. And you should specialise your data_type.
 
   Example:
-          Rscript ./CCI-Identify
-          --BS_BK_DK_sig=./BS_BK_DK_sig.csv
-          --input=./test_counts.csv
-          --species=mouse
-          --data_type=RNAseq
-          --range=0.45
-          --output=./Tpm4_vs_pmigwork_file/
-          --prefix=TPM4oe_vs_Ctrl
-          --log_transform=YES
-
+            Rscript ./CCI-Identify.R \
+                    --BS_BK_DK_sig=./BS_BK_DK_sig.csv \
+                    --input=./test_counts.csv \
+                    --species=mouse \
+                    --data_type=RNAseq \
+                    --range=0.45 \
+                    --output=./out_tmp/ \
+                    --prefix=TPM4oe_vs_Ctrl \
+                    --log_transform=YES
 ~~~
 
 * 1. The `BS_BK_DK_sig` could be accessed in `./CCI-Identify` files, named `BS_BK_DK_sig.csv`. And you could get these files by clicking [here](CCI-Identify)
@@ -74,15 +73,15 @@ Rscript ./CCI-Identify.R
 Then, you could try the test codes with test data stored in `./CCI-Identify` as following:
 
 ~~~R
-Rscript ./CCI-Identify.R \
-    --BS_BK_DK_sig=./BS_BK_DK_sig.csv \
-    --input=./test_counts.csv \
-    --species=mouse \
-    --data_type=RNAseq \
-    --range=0.45 \
-    --output=./out_tmp/ \
-    --prefix=TPM4oe_vs_Ctrl \
-    --log_transform=YES
+time Rscript ./CCI-Identify.R \
+--BS_BK_DK_sig=./BS_BK_DK_sig.csv \
+--input=./test_counts.csv \
+--species=mouse \
+--data_type=RNAseq \
+--range=0.45 \
+--output=./out_tmp/ \
+--prefix=TPM4oe_vs_Ctrl \
+--log_transform=YES
 ~~~
 
 ~~~shell
@@ -90,6 +89,8 @@ loading packages
 CCI calculation done
 CCI distribution done
 The density of CCI distrubution done
+
+real:0m6.931s; user:0m6.560s; sys:0m0.348s
 ~~~
 
 And then, you could get the output files as following:
