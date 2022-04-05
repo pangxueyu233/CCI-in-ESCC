@@ -52,7 +52,7 @@ if("--help" %in% args ) {
           --species=mouse \
           --data_type=RNAseq \
           --range=0.45 \
-          --output=./Tpm4_vs_pmigwork_file/ \
+          --output=./out_tmp/ \
           --prefix=TPM4oe_vs_Ctrl \
           --log_transform=YES \n\n")
 
@@ -68,6 +68,13 @@ suppressPackageStartupMessages({
   require("ggplot2")
   require("ggtern")
   })
+
+if (packageVersion("ggtern") !="3.1.0") {
+  message("Although the CCI would be calculated, We still prefer you to install the version 3.1.0 of ggtern")
+}
+if (packageVersion("ggplot2") !="3.1.0") {
+  message("To better match the version 3.1.0 of ggtern, we prefer you to install the version 3.1.0 of ggplot2")
+}
 
 Normal_SE_sig <- read.csv(args$BS_BK_DK_sig)
 Normal_SE_sig$cluster <- as.character(Normal_SE_sig$cluster)
@@ -120,10 +127,12 @@ CCI$cos3 <- (c^2 +(((a^2+b^2+c^2)^0.5)^2)-(((a^2+b^2)^0.5)^2))/(2*c*((a^2+b^2+c^
 CCI$cos1[which((2*a*((a^2+b^2+c^2)^0.5)==0))] <- 2
 CCI$cos2[which((2*b*((a^2+b^2+c^2)^0.5)==0))] <- 2
 CCI$cos3[which((2*c*((a^2+b^2+c^2)^0.5)==0))] <- 2
-CCI$Confusion_score <- apply(CCI[,c("cos1","cos2","cos3")],1,sd)
-CCI$Confusion_score <- factor/CCI$Confusion_score
+CCI$CCI_score <- apply(CCI[,c("cos1","cos2","cos3")],1,sd)
+CCI$CCI_score <- factor/CCI$CCI_score
 
 write.csv(CCI,paste0(args$output,"/",args$prefix,"_",args$species,"_",args$data_type,"_CCI.score.csv"))
+
+message("CCI distribution done")
 
 CCI$sample <- rownames(CCI)
 p1 <- ggtern(CCI , aes(x = BK, y = BS, z = DK,color=sample))+
@@ -133,4 +142,18 @@ theme_rgbg()+
 ggsave(paste0(args$output,"/",args$prefix,"_",args$species,"_",args$data_type,"_CCI.svg"), plot=p1,width = 5, height = 5,dpi=1080)
 ggsave(paste0(args$output,"/",args$prefix,"_",args$species,"_",args$data_type,"_CCI.pdf"), plot=p1,width = 5, height = 5,dpi=1080)
 
-message("CCI distrubution done")
+aa <- c("#313695","#5083BB","#8FC3DD","#D2ECF4","#FFFFBF","#FDD384","#F88D51","#DE3F2E","#A50026")
+p1 <- ggtern(CCI , aes(x = BK, y = BS, z = DK))+
+  theme_rgbg()+
+ geom_point(alpha = 0.6, color = "#aebfbb", size = 1) + 
+    stat_density_tern(
+      geom = 'polygon', 
+      aes(fill = ..level.., alpha = ..level..),bins = 500,inherit.aes=TRUE) +
+    guides(alpha = FALSE)+
+    scale_fill_gradientn(colours=alpha(aa,1),na.value="NA")+ 
+    scale_alpha(range = c(0, 0.8), guide = FALSE) + 
+    tern_limits(T = as.numeric(args$range), L = as.numeric(args$range), R = as.numeric(args$range))
+ggsave(paste0(args$output,"/",args$prefix,"_",args$species,"_",args$data_type,"_CCI_density.svg"), plot=p1,width = 5, height = 5,dpi=1080)
+ggsave(paste0(args$output,"/",args$prefix,"_",args$species,"_",args$data_type,"_CCI_density.pdf"), plot=p1,width = 5, height = 5,dpi=1080)
+
+message("The density of CCI distribution done")
