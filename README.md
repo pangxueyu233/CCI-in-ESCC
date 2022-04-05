@@ -4,17 +4,47 @@
 
 This page recorded the codes used and mentioned in [this paper](). 
 
-To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all processed data on [Figshare](https://figshare.com/account/projects/92384/articles/13206338) and you could download them followed according agreements. Raw data also had been submitted on GEO database, and you could be accessible by clicking [GSEXXX]( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161570). Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
+To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all `processed data` and `Raw data` also had been submitted on GEO database, and you could be accessible by clicking [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and you could download them followed GEO agreements. Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
 
-In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we also be happy to share them to help you improve your work efficiency in omics data analysis and visualizations.
+In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we are also happy to share them to help you improve your work efficiency in omics data analysis and visualizations.
 
 # **The usage of CCI-Identify** 
 
 To better validate the Confused Cell Identity (CCI) in ESCC and calculate the CCI score in each sample/single-cell, we had created a pipeline, named `CCI-Identify.R` , to directly generate the CCI related results mentioned in our paper. And you could get the pipeline by clicking [here](CCI-Identify).
 
-This part would help you yo understand the detail input files in  `CCI-Identify.R` pipeline. Firstly, you should install the appropriate `R (version >= 3.5)`, `ggplot2 (version=3.1)`, `ggtern (version=3.1)`, `dplyr`, `nichenetr` and `data.table`.
+You also could get the `CCI-Identify.R` by downloading this git:
 
-These pipeline included some important parameters. And here, we could introduce each of them. 
+~~~shell
+git clone git@github.com:pangxueyu233/CCI-in-ESCC.git
+cd ./CCI-in-ESCC/CCI-Identify
+tree
+.
+├── BS_BK_DK_sig.csv
+├── `CCI-Identify.R`
+├── R_PACKAGES
+│   ├── ggplot2_3.1.0.tar.gz
+│   └── ggtern_3.1.0.tar.gz
+├── out_tmp
+│   ├── TPM4oe_vs_Ctrl_mouse_RNAseq_CCI.pdf
+│   ├── TPM4oe_vs_Ctrl_mouse_RNAseq_CCI.score.csv
+│   └── TPM4oe_vs_Ctrl_mouse_RNAseq_CCI.svg
+└── test_counts.csv
+
+2 directories, 8 files
+~~~
+
+Then, you could used the `CCI-Identify.R` stored in `./CCI-in-ESCC/CCI-Identify`
+
+---
+
+This part would help you yo understand the detail input files in  `CCI-Identify.R` pipeline. Firstly, you should install the appropriate `R (version >= 3.5)`, `ggplot2 (version=3.1)`, `ggtern (version=3.1)`, `dplyr`, `nichenetr` and `data.table`. The `ggplot2 (version=3.1)`and `ggtern (version=3.1)` should be installed before you run the `CCI-Identify.R`. You also could use another version of them, but the  `version=3.1` of them were most stable, because the function to calculate the density of distribution in the different version of ggplot2 has some differences, which might impact the visualization of CCI. And the source data of the two packages had been stored in the `./CCI-in-ESCC/CCI-Identify/R_PACKAGES`. You could install them on the local Linux system:
+
+```R
+R CMD INSTALL ./CCI-in-ESCC/CCI-Identify/R_PACKAGES/ggplot2_3.1.0.tar.gz
+R CMD INSTALL ./CCI-in-ESCC/CCI-Identify/R_PACKAGES/ggtern_3.1.0.tar.gz
+```
+
+These pipeline included some important parameters. And here, we will introduce each of them. 
 
 ~~~R
 Rscript ./CCI-Identify.R
@@ -168,6 +198,4 @@ This part recorded the codes of CCI in murine data. And you could access this co
 
 Our paper has been published on XXXXX
 
-You could downloaded raw data from [GEO Database GSEXXX](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSEXXX)
-
-You could downloaded processed data from [Figshare Database]()
+You could downloaded raw data from [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955)
