@@ -2,7 +2,7 @@
 
 ![image-20211112114240906](README.assets/image-20211112114240906.png)
 
-This page recorded the codes used and mentioned in [this paper](). 
+This page recorded the codes used and mentioned in [this paper](https://www.nature.com/articles/s41392-022-00946-8).  And you could downloaded this paper by clicking [here](paper/CCI.pdf)
 
 To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all `processed data` and `Raw data` also had been submitted on GEO database, and you could be accessible by clicking [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and you could download them followed GEO agreements. Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
 
@@ -196,6 +196,8 @@ This part recorded the codes of CCI in murine data. And you could access this co
 
 # **Citation**
 
-Our paper has been published on XXXXX
+Our paper has been published on [*Signal Transduction and Targeted Therapy*](https://www.nature.com/articles/s41392-022-00946-8)
+
+You could downloaded this paper by clicking [here](paper/CCI.pdf)
 
 You could downloaded raw data from [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955)
