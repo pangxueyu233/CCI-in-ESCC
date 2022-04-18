@@ -6,7 +6,7 @@ This page recorded the codes used and mentioned in [this paper](https://www.natu
 
 To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all `processed data` on [Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548)  you could get them by clicking [here](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548). And the `Raw data` also had been submitted on GEO database, and you could be accessible by clicking [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and you could download them followed GEO agreements. Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
 
-In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we are also happy to share them to help you improve your work efficiency in omics data analysis and visualizations.
+In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we are also happy to share them to help you improve your work efficiency in omics data analysis and visualizations. You could found them by clicking [here](CCI-Identify/extended_tools).
 
 # **The usage of CCI-Identify** 
 
