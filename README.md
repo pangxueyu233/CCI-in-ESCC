@@ -4,7 +4,7 @@
 
 This page recorded the codes used and mentioned in [this paper](https://www.nature.com/articles/s41392-022-00946-8).  And you could downloaded this paper by clicking [here](paper/CCI.pdf)
 
-To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all `processed data` and `Raw data` also had been submitted on GEO database, and you could be accessible by clicking [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and you could download them followed GEO agreements. Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
+To increase the reproducibility of omics analysis mentioned in our paper, we will record and submit all scripts, raw data and processed data for sharing our bioinformatics tools and academic principles. We have submitted all `processed data` on [Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548)  you could get them by clicking [here](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548). And the `Raw data` also had been submitted on GEO database, and you could be accessible by clicking [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and you could download them followed GEO agreements. Besides, we also recorded our figures-making codes in Markdown files, which could be regarded as tutorials for beginner of omics analysis. More detail descriptions of the submitted data you could get in following pages.
 
 In this project, to better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we are also happy to share them to help you improve your work efficiency in omics data analysis and visualizations.
 
@@ -156,7 +156,9 @@ tree -lh ./out_tmp/
 
 # **Codes of analyzing and visualization in omics data**
 
-The codes of this project included four parts, `scRNA-seq` data analysis, `TCGA-ESCC`data analysis, `micro-array` data analysis and `protein` data analysis. The general processing of these data had been recorded in following pages, and stored as markdown files. 
+The codes of this project were divided into four parts, `scRNA-seq` data analysis, `TCGA-ESCC`data analysis, `micro-array` data analysis and `protein` data analysis. The general processing of these data had been recorded in following pages, and stored as markdown files.  
+
+*To better analyze and visualize our data, we have modified a lot of function formulas from previous perfect packages. And we also be happy to share them to help you improve your work efficiency in omics data analysis and visualizations. You could found them by clicking [here](CCI-Identify/extended_tools).*
 
 * ## 1. Codes of ESCC single-cell landscape
 
@@ -200,4 +202,4 @@ Our paper has been published on [*Signal Transduction and Targeted Therapy*](htt
 
 You could downloaded this paper by clicking [here](paper/CCI.pdf)
 
-You could downloaded raw data from [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955)
+You could downloaded raw data from [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and [Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548)
