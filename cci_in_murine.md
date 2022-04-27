@@ -252,5 +252,5 @@ p1 <- ggboxplot(summer_all, x = "group", y = "Confusion_score", fill="group",
 ggsave("/mnt/data/user_data/xiangyu/workshop/scRNA/eso_scRNA/Heso_all_sample_merge/figure_making/Confusion_score_mmu_AZ960.svg", plot=p1,width = 5, height = 5,dpi=1080)
 ~~~
 
-![image-20211109134625750](cci_in_murine.assets/image-20211109134625750.png)
+![image-20220427145957797](cci_in_murine.assets/image-20220427145957797.png)
 
