@@ -196,6 +196,57 @@ This part recorded the codes to validate the CCI was an independent dignosis mar
 
 This part recorded the codes of CCI in murine data. And you could access this code by clicking [here](cci_in_murine.md).
 
+
+
+# **The description of the data stored in *[Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548)***
+
+We submitted 8 `.rds` files on [Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548). The detail descriptions are as following:
+
+~~~shell
+tree -lh
+.
+├── [727M]  normalSE_development_map.rds
+├── [857M]  scESCC_HCA_merge.rds
+├── [1.7G]  scESCC_map.rds
+├── [896M]  scESCC_map_from_Zhang_only_SE.rds
+├── [192M]  scESCC_map_only_MSE.rds
+├── [390M]  scESCC_map_only_SE.rds
+├── [1.3G]  scHCA_SE_development.rds
+└── [457M]  scHCA_SE_development_monocle.rds
+0 directories, 8 files
+~~~
+
+~~~R
+# This rds file is a seurat object which stores the normal squamous cells data of one sample sequenced by our institute.
+normalSE_development_map.rds
+
+# This rds file is a seurat object which stores the squamous cells and cancer cells of ESCC samples sequenced by our institute and normal esophageal squamous cells from human cell atlas (HCA)
+scESCC_HCA_merge.rds
+
+# This rds file is a seurat object which stores all cells of ESCC and normal samples sequenced by our institute.
+scESCC_map.rds
+
+# This rds file is a seurat object which stores the squamous cells and cancer cells of ESCC samples sequenced from Zhang et al.
+scESCC_map_from_Zhang_only_SE.rds
+
+# This rds file is a seurat object which stores the malignant squamous cells of ESCC samples sequenced by our institute.
+scESCC_map_only_MSE.rds
+
+# This rds file is a seurat object which stores the squamous cells and cancer cells of ESCC samples sequenced by our institute.
+scESCC_map_only_SE.rds
+
+# This rds file is a seurat object which stores the normal squamous cells of our sequenced sample and the HCA projects.
+scHCA_SE_development.rds
+
+# This rds file is a monocle object which stores the normal squamous cells of our sequenced sample and the HCA projects.
+scHCA_SE_development_monocle.rds
+
+~~~
+
+- I prefer you could use the `scESCC_map.rds` file to reproduce the `tsne` map of `Figure1`. This file stores all cells of ESCC and normal samples sequenced by our institute. And more detail codes you could refer to [here](scESCC_Ours.md).
+- I also prefer you to use the another files  `normalSE_development_map.rds`, `scHCA_SE_development.rds` and`scHCA_SE_development_monocle.rds`, which store the normal squamous cells from our sequenced sample and the HCA projects. And more detail codes you could refer to [here](scSE_development.md).
+- And other `rds files` are generated from different parts where you could visit and find them in my codes sharing seesion.  
+
 # **Citation**
 
 Our paper has been published on [*Signal Transduction and Targeted Therapy*](https://www.nature.com/articles/s41392-022-00946-8)
@@ -203,3 +254,4 @@ Our paper has been published on [*Signal Transduction and Targeted Therapy*](htt
 You could downloaded this paper by clicking [here](paper/CCI.pdf)
 
 You could downloaded raw data from [GEO Database GSE188955](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188955) and [Figshare](https://figshare.com/articles/dataset/CCI-in-ESCC/19609548)
+
